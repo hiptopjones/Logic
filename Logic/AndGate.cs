@@ -10,7 +10,6 @@ namespace Logic
     {
         private Relay Relay1 { get; set; }
         private Relay Relay2 { get; set; }
-        private Connector Connector { get; set; }
 
         public Node Input1
         {
@@ -32,7 +31,7 @@ namespace Logic
         {
             get
             {
-                return Relay2.Switch.Output2;
+                return Relay2.Switch.Output;
             }
         }
 
@@ -40,9 +39,15 @@ namespace Logic
         {
             Relay1 = new Relay();
             Relay2 = new Relay();
-            Connector = new Connector(Relay1.Switch.Output2, Relay2.Switch.Input);
+            
+            Relay1.Switch.Output.AttachSink(Relay2.Switch.Input);
 
             Relay1.Switch.Input.Value = true;
+        }
+
+        public override string ToString()
+        {
+            return string.Format("Input1: {0} Input2: {1} Output: {2}", Input1, Input2, Output);
         }
     }
 }

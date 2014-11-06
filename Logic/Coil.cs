@@ -11,7 +11,7 @@ namespace Logic
         public Node Input { get; private set; }
         public Node Output { get; private set; }
 
-        public bool IsMagnetActive { get; private set; }
+        public bool IsMagnetActivated { get; private set; }
         public event EventHandler MagnetChanged;
 
         public Coil()
@@ -22,16 +22,11 @@ namespace Logic
             Input.ValueChanged += (s, e) =>
             {
                 bool value = Input.Value;
-                if (Output.Value != value)
-                {
-                    if (value)
-                    {
-                        IsMagnetActive = true;
-                        NotifyMagnetChanged();
-                    }
 
-                    Output.Value = value;
-                }
+                IsMagnetActivated = value;
+                NotifyMagnetChanged();
+ 
+                Output.Value = value;
             };
         }
 
@@ -42,6 +37,11 @@ namespace Logic
             {
                 handler(this, EventArgs.Empty);
             }
+        }
+
+        public override string ToString()
+        {
+            return string.Format("Input: {0} Output: {1} IsMagnetActivated: {2}", Input, Output, IsMagnetActivated);
         }
     }
 }

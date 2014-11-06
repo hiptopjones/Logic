@@ -6,61 +6,83 @@ using System.Threading.Tasks;
 
 namespace Logic
 {
+    // Single-pole, single throw switch
     public class Switch
     {
-        public Node Input { get; private set; }
-        public Node Output1 { get; private set; }
-        public Node Output2 { get; private set; }
+        private enum SwitchState
+        {
+            Idle,
+            Activated
+        }
 
-        private bool _position;
-        public bool Position
+        public Node Input { get; private set; }
+        public Node Output { get; private set; }
+
+        public bool IsSwitchActivated
         {
             set
             {
-                if (_position != value)
-                {
-                    if (CurrentOutput.Value)
-                    {
-                        CurrentOutput.Value = false;
-                    }
+                State = (value ? SwitchState.Activated : SwitchState.Idle);
+            }
 
-                    _position = value;
-                    CurrentOutput = (CurrentOutput == Output1 ? Output2 : Output1);
+            get
+            {
+                return (State == SwitchState.Activated);
+            }
+        }
+
+        private SwitchState _state = SwitchState.Idle;
+        private SwitchState State
+        {
+            set
+            {
+                if (_state != value)
+                {
+                    _state = value;
                     UpdateOutputValue(Input.Value);
                 }
             }
 
             get
             {
-                return _position;
+                return _state;
             }
         }
 
-        private Node CurrentOutput { get; set; }
+        // Enables changing the switch from normally-open (default) to normally-closed
+        private bool IsNormallyOpen { get; set; }
 
-        public Switch()
+        public Switch(bool isNormallyOpen = true)
         {
-            Input = new Node();
-            Output1 = new Node();
-            Output2 = new Node();
+            IsNormallyOpen = isNormallyOpen;
 
-            CurrentOutput = Output1;
+            Input = new Node();
+            Output = new Node();
 
             Input.ValueChanged += OnInputValueChanged;
         }
 
         private void OnInputValueChanged(object sender, EventArgs e)
         {
-            bool value = Input.Value;
-            UpdateOutputValue(value);
+            UpdateOutputValue(Input.Value);
         }
 
         private void UpdateOutputValue(bool value)
         {
-            if (value != CurrentOutput.Value)
+            bool isActivated = IsSwitchActivated;
+            if (IsNormallyOpen)
             {
-                CurrentOutput.Value = value;
+                Output.Value = (isActivated ? value : false);
             }
+            else
+            {
+                Output.Value = (!isActivated ? value : false);
+            }
+        }
+
+        public override string ToString()
+        {
+            return string.Format("Input: {0} Output: {1} IsNormallyOpen: {2}", Input, Output, IsNormallyOpen);
         }
     }
 }

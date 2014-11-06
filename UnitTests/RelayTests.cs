@@ -14,14 +14,14 @@ namespace UnitTests
             Relay relay = new Relay();
 
             // Assert
-            Assert.IsFalse(relay.Coil.IsMagnetActive);
-            Assert.IsFalse(relay.Switch.Position);
-            Assert.IsFalse(relay.Switch.Output1.Value);
+            Assert.IsFalse(relay.Coil.IsMagnetActivated);
+            Assert.IsFalse(relay.Switch.IsSwitchActivated);
+            Assert.IsFalse(relay.Switch.Output.Value);
             Assert.IsFalse(relay.Coil.Output.Value);
         }
 
         [TestMethod]
-        public void CoilInput_True_SwitchPositionIsOn()
+        public void CoilInput_True_SwitchIsActivated()
         {
             // Arrange
             Relay relay = new Relay();
@@ -30,7 +30,7 @@ namespace UnitTests
             relay.Coil.Input.Value = true;
 
             // Assert
-            Assert.IsTrue(relay.Switch.Position);
+            Assert.IsTrue(relay.Switch.IsSwitchActivated);
         }
     }
 }

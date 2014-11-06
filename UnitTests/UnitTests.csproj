@@ -57,6 +57,8 @@
     <Compile Include="AndGateTests.cs" />
     <Compile Include="CoilTests.cs" />
     <Compile Include="SwitchTests.cs" />
+    <Compile Include="InverterTests.cs" />
+    <Compile Include="PetzoldsCatTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Logic\Logic.csproj">

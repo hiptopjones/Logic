@@ -56,6 +56,5 @@ namespace UnitTests
             // Assert
             Assert.IsTrue(orGate.Output.Value);
         }
-
     }
 }

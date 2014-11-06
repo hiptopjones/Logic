@@ -14,7 +14,7 @@ namespace UnitTests
             Coil coil = new Coil();
 
             // Assert
-            Assert.IsFalse(coil.IsMagnetActive);
+            Assert.IsFalse(coil.IsMagnetActivated);
             Assert.IsFalse(coil.Output.Value);
         }
 
@@ -28,7 +28,7 @@ namespace UnitTests
             coil.Input.Value = true;
 
             // Assert
-            Assert.IsTrue(coil.IsMagnetActive);
+            Assert.IsTrue(coil.IsMagnetActivated);
         }
 
         [TestMethod]
@@ -41,7 +41,7 @@ namespace UnitTests
             coil.Input.Value = false;
 
             // Assert
-            Assert.IsFalse(coil.IsMagnetActive);
+            Assert.IsFalse(coil.IsMagnetActivated);
         }
 
         [TestMethod]

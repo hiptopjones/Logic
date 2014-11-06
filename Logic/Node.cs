@@ -20,12 +20,21 @@ namespace Logic
 
             set
             {
-                if (_value != value)
-                {
-                    _value = value;
-                    NotifyOutputChanged();
-                }
+                _value = value;
+                NotifyOutputChanged();
             }
+        }
+
+        public void AttachSink(Node sink)
+        {
+            ValueChanged += (s, e) =>
+            {
+                Node source = s as Node;
+                sink.Value = source.Value;
+            };
+
+            // Update with the current value
+            sink.Value = Value;
         }
 
         private void NotifyOutputChanged()
@@ -35,6 +44,11 @@ namespace Logic
             {
                 handler(this, EventArgs.Empty);
             }
+        }
+
+        public override string ToString()
+        {
+            return string.Format("Value: {0}", Value);
         }
     }
 }

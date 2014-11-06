@@ -11,18 +11,22 @@ namespace Logic
         public Coil Coil { get; private set; }
         public Switch Switch { get; private set; }
 
-        public Relay()
+        public Relay(bool isSwitchNormallyOpen = true)
         {
             Coil = new Coil();
-            Switch = new Switch();
+            Switch = new Switch(isSwitchNormallyOpen);
 
             Coil.MagnetChanged += OnCoilMagnetChanged;
         }
 
         private void OnCoilMagnetChanged(object sender, EventArgs e)
         {
-            bool isMagnetActive = Coil.IsMagnetActive;
-            Switch.Position = isMagnetActive;
+            Switch.IsSwitchActivated = Coil.IsMagnetActivated;
+        }
+
+        public override string ToString()
+        {
+            return string.Format("Coil: {0} Switch: {1}", Coil, Switch);
         }
     }
 }

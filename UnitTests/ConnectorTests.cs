@@ -13,7 +13,7 @@ namespace UnitTests
             // Arrange
             Relay relay1 = new Relay();
             Relay relay2 = new Relay();
-            Connector connector = new Connector(relay1.Switch.Output2, relay2.Coil.Input);
+            Connector connector = new Connector(relay1.Switch.Output, relay2.Coil.Input);
             
             // Act
             relay1.Switch.Input.Value = true;
@@ -21,7 +21,7 @@ namespace UnitTests
             relay1.Coil.Input.Value = true;
 
             // Assert
-            Assert.IsTrue(relay2.Switch.Output2.Value);
+            Assert.IsTrue(relay2.Switch.Output.Value);
         }
 
         [TestMethod]
@@ -30,14 +30,14 @@ namespace UnitTests
             // Arrange
             Relay relay1 = new Relay();
             Relay relay2 = new Relay();
-            Connector connector = new Connector(relay1.Switch.Output2, relay2.Switch.Input);
+            Connector connector = new Connector(relay1.Switch.Output, relay2.Switch.Input);
 
             // Act
             relay1.Switch.Input.Value = true;
             relay1.Coil.Input.Value = true;
 
             // Assert
-            Assert.IsFalse(relay2.Switch.Output2.Value);
+            Assert.IsFalse(relay2.Switch.Output.Value);
         }
 
         [TestMethod]
@@ -46,7 +46,7 @@ namespace UnitTests
             // Arrange
             Relay relay1 = new Relay();
             Relay relay2 = new Relay();
-            Connector connector = new Connector(relay1.Switch.Output2, relay2.Switch.Input);
+            Connector connector = new Connector(relay1.Switch.Output, relay2.Switch.Input);
 
             // Act
             relay1.Switch.Input.Value = true;
@@ -54,7 +54,7 @@ namespace UnitTests
             relay2.Coil.Input.Value = true;
 
             // Assert
-            Assert.IsTrue(relay2.Switch.Output2.Value);
+            Assert.IsTrue(relay2.Switch.Output.Value);
         }
     }
 }

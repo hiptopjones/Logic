@@ -8,44 +8,109 @@ namespace UnitTests
     public class SwitchTests
     {
         [TestMethod]
-        public void Constructor_Defaults()
+        public void Constructor_Defaults_SwitchNotActivatedAndOutputFalse()
         {
             // Arrange / Act
             Switch sw = new Switch();
 
             // Assert
-            Assert.IsFalse(sw.Position);
-            Assert.IsFalse(sw.Output1.Value);
-            Assert.IsFalse(sw.Output2.Value);
+            Assert.IsFalse(sw.IsSwitchActivated);
+            Assert.IsFalse(sw.Output.Value);
         }
 
         [TestMethod]
-        public void Input_True_Output1IsTrue()
+        public void Constructor_IsNormallyClosed_SwitchNotActivatedAndOutputFalse()
+        {
+            // Arrange / Act
+            Switch sw = new Switch(false);
+
+            // Assert
+            Assert.IsFalse(sw.IsSwitchActivated);
+            Assert.IsFalse(sw.Output.Value);
+        }
+
+        [TestMethod]
+        public void SwitchActivated_InputIsTrue_OutputIsTrue()
         {
             // Arrange
             Switch sw = new Switch();
+            sw.IsSwitchActivated = true;
 
             // Act
             sw.Input.Value = true;
 
             // Assert
-            Assert.IsTrue(sw.Output1.Value);
-            Assert.IsFalse(sw.Output2.Value);
+            Assert.IsTrue(sw.Output.Value);
         }
 
         [TestMethod]
-        public void Input_True_Outpu2IsTrue()
+        public void SwitchActivated_InputIsFalse_OutputIsFalse()
         {
             // Arrange
             Switch sw = new Switch();
+            sw.IsSwitchActivated = true;
+
+            // Act
+            sw.Input.Value = false;
+
+            // Assert
+            Assert.IsFalse(sw.Output.Value);
+        }
+
+        [TestMethod]
+        public void InputIsTrue_SwitchActivated_OutputIsTrue()
+        {
+            // Arrange
+            Switch sw = new Switch();
+            sw.Input.Value = true;
+
+            // Act
+            sw.IsSwitchActivated = true;
+
+            // Assert
+            Assert.IsTrue(sw.Output.Value);
+        }
+
+        [TestMethod]
+        public void InputIsFalse_SwitchActivated_OutputIsFalse()
+        {
+            // Arrange
+            Switch sw = new Switch();
+            sw.Input.Value = false;
+
+            // Act
+            sw.IsSwitchActivated = true;
+
+            // Assert
+            Assert.IsFalse(sw.Output.Value);
+        }
+
+        [TestMethod]
+        public void SwitchIsNormallyClosedAndSwitchActivated_InputIsTrue_OutputIsFalse()
+        {
+            // Arrange
+            Switch sw = new Switch(false);
+            sw.IsSwitchActivated = true;
 
             // Act
             sw.Input.Value = true;
-            sw.Position = true;
 
             // Assert
-            Assert.IsFalse(sw.Output1.Value);
-            Assert.IsTrue(sw.Output2.Value);
+            Assert.IsFalse(sw.Output.Value);
+        }
+
+        [TestMethod]
+        public void SwitchIsNormallyClosedAndInputIsTrue_SwitchActivated_OutputIsFalse()
+        {
+            // Arrange
+            Switch sw = new Switch(false);
+            sw.Input.Value = true;
+
+            // Act
+            sw.IsSwitchActivated = true;
+
+            // Assert
+            Assert.IsFalse(sw.Output.Value);
         }
     }
 }

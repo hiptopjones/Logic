@@ -45,6 +45,7 @@
     <Compile Include="Coil.cs" />
     <Compile Include="Connector.cs" />
     <Compile Include="Node.cs" />
+    <Compile Include="Inverter.cs" />
     <Compile Include="OrGate.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
