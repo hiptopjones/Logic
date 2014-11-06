@@ -19,7 +19,7 @@ namespace UnitTests
         }
 
         [TestMethod]
-        public void Input_True_MagnetIsActive()
+        public void InputTrue_MagnetIsActive()
         {
             // Arrange
             Coil coil = new Coil();
@@ -32,7 +32,7 @@ namespace UnitTests
         }
 
         [TestMethod]
-        public void Input_False_MagnetNotActive()
+        public void InputFalse_MagnetNotActive()
         {
             // Arrange
             Coil coil = new Coil();
@@ -45,7 +45,7 @@ namespace UnitTests
         }
 
         [TestMethod]
-        public void Input_True_OutputIsTrue()
+        public void InputTrue_OutputIsTrue()
         {
             // Arrange
             Coil coil = new Coil();
@@ -58,7 +58,7 @@ namespace UnitTests
         }
 
         [TestMethod]
-        public void Input_False_OutputIsFalse()
+        public void InputFalse_OutputIsFalse()
         {
             // Arrange
             Coil coil = new Coil();
@@ -69,5 +69,20 @@ namespace UnitTests
             // Assert
             Assert.IsFalse(coil.Output.Value);
         }
+
+        [TestMethod]
+        public void ToggleInput_MagnetActivationCorrect()
+        {
+            // Arrange
+            Coil coil = new Coil();
+            coil.Input.Value = true;
+
+            // Act
+            coil.Input.Value = false;
+
+            // Assert
+            Assert.IsFalse(coil.IsMagnetActivated);
+        }
+
     }
 }

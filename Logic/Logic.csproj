@@ -43,7 +43,6 @@
   <ItemGroup>
     <Compile Include="AndGate.cs" />
     <Compile Include="Coil.cs" />
-    <Compile Include="Connector.cs" />
     <Compile Include="Node.cs" />
     <Compile Include="Inverter.cs" />
     <Compile Include="OrGate.cs" />

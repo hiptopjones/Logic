@@ -112,5 +112,35 @@ namespace UnitTests
             // Assert
             Assert.IsFalse(sw.Output.Value);
         }
+
+        [TestMethod]
+        public void SwitchToggle_OutputIsCorrect()
+        {
+            // Arrange
+            Switch sw = new Switch();
+            sw.Input.Value = true;
+            sw.IsSwitchActivated = true;
+
+            // Act
+            sw.IsSwitchActivated = false;
+
+            // Assert
+            Assert.IsFalse(sw.Output.Value);
+        }
+
+        [TestMethod]
+        public void SwitchToggleAndIsNormallyClosed_OutputIsFalse()
+        {
+            // Arrange
+            Switch sw = new Switch(false);
+            sw.Input.Value = true;
+            sw.IsSwitchActivated = true;
+
+            // Act
+            sw.IsSwitchActivated = false;
+
+            // Assert
+            Assert.IsTrue(sw.Output.Value);
+        }
     }
 }
