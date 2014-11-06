@@ -114,7 +114,7 @@ namespace UnitTests
         }
 
         [TestMethod]
-        public void SwitchToggle_OutputIsCorrect()
+        public void SwitchToggle_OutputIsFalse()
         {
             // Arrange
             Switch sw = new Switch();
@@ -129,7 +129,7 @@ namespace UnitTests
         }
 
         [TestMethod]
-        public void SwitchToggleAndIsNormallyClosed_OutputIsFalse()
+        public void SwitchToggleAndIsNormallyClosed_OutputIsTrue()
         {
             // Arrange
             Switch sw = new Switch(false);
