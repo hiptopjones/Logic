@@ -19,40 +19,40 @@ namespace UnitTests
         }
 
         [TestMethod]
-        public void AndGate_Input1IsTrue_OutputIsFalse()
+        public void AndGate_InputAIsTrue_OutputIsFalse()
         {
             // Arrange
             AndGate andGate = new AndGate();
 
             // Act
-            andGate.Input1.Value = true;
+            andGate.InputA.Value = true;
 
             // Assert
             Assert.IsFalse(andGate.Output.Value);
         }
 
         [TestMethod]
-        public void AndGate_Input2IsTrue_OutputIsFalse()
+        public void AndGate_InputBIsTrue_OutputIsFalse()
         {
             // Arrange
             AndGate andGate = new AndGate();
 
             // Act
-            andGate.Input2.Value = true;
+            andGate.InputB.Value = true;
 
             // Assert
             Assert.IsFalse(andGate.Output.Value);
         }
 
         [TestMethod]
-        public void AndGate_Input1And2IsTrue_OutputIsTrue()
+        public void AndGate_InputAAndBIsTrue_OutputIsTrue()
         {
             // Arrange
             AndGate andGate = new AndGate();
 
             // Act
-            andGate.Input1.Value = true;
-            andGate.Input2.Value = true;
+            andGate.InputA.Value = true;
+            andGate.InputB.Value = true;
 
             // Assert
             Assert.IsTrue(andGate.Output.Value);

@@ -15,36 +15,36 @@ namespace UnitTests
             FullAdder fullAdder = new FullAdder();
 
             // Assert
-            Assert.IsFalse(fullAdder.SumOutput.Value);
-            Assert.IsFalse(fullAdder.CarryOutput.Value);
+            Assert.IsFalse(fullAdder.OutputSum.Value);
+            Assert.IsFalse(fullAdder.OutputCarry.Value);
         }
 
         [TestMethod]
-        public void FullAdder_Input1IsTrue_SumIsTrue()
+        public void FullAdder_InputAIsTrue_SumIsTrue()
         {
             // Arrange
             FullAdder fullAdder = new FullAdder();
 
             // Act
-            fullAdder.Input1.Value = true;
+            fullAdder.InputA.Value = true;
 
             // Assert
-            Assert.IsTrue(fullAdder.SumOutput.Value);
-            Assert.IsFalse(fullAdder.CarryOutput.Value);
+            Assert.IsTrue(fullAdder.OutputSum.Value);
+            Assert.IsFalse(fullAdder.OutputCarry.Value);
         }
 
         [TestMethod]
-        public void FullAdder_Input2IsTrue_SumIsTrue()
+        public void FullAdder_InputBIsTrue_SumIsTrue()
         {
             // Arrange
             FullAdder fullAdder = new FullAdder();
 
             // Act
-            fullAdder.Input2.Value = true;
+            fullAdder.InputB.Value = true;
 
             // Assert
-            Assert.IsTrue(fullAdder.SumOutput.Value);
-            Assert.IsFalse(fullAdder.CarryOutput.Value);
+            Assert.IsTrue(fullAdder.OutputSum.Value);
+            Assert.IsFalse(fullAdder.OutputCarry.Value);
         }
 
         [TestMethod]
@@ -54,58 +54,58 @@ namespace UnitTests
             FullAdder fullAdder = new FullAdder();
 
             // Act
-            fullAdder.CarryInput.Value = true;
+            fullAdder.InputCarry.Value = true;
 
             // Assert
-            Assert.IsTrue(fullAdder.SumOutput.Value);
-            Assert.IsFalse(fullAdder.CarryOutput.Value);
+            Assert.IsTrue(fullAdder.OutputSum.Value);
+            Assert.IsFalse(fullAdder.OutputCarry.Value);
         }
 
         [TestMethod]
-        public void FullAdder_Input1And2IsTrue_SumIsFalseAndCarryIsTrue()
+        public void FullAdder_InputAAndBIsTrue_SumIsFalseAndCarryIsTrue()
         {
             // Arrange
             FullAdder fullAdder = new FullAdder();
 
             // Act
-            fullAdder.Input1.Value = true;
-            fullAdder.Input2.Value = true;
+            fullAdder.InputA.Value = true;
+            fullAdder.InputB.Value = true;
 
             // Assert
-            Assert.IsFalse(fullAdder.SumOutput.Value);
-            Assert.IsTrue(fullAdder.CarryOutput.Value);
+            Assert.IsFalse(fullAdder.OutputSum.Value);
+            Assert.IsTrue(fullAdder.OutputCarry.Value);
         }
 
         [TestMethod]
-        public void FullAdder_Input1And2AndCarryIsTrue_SumIsTrueAndCarryIsTrue()
+        public void FullAdder_InputAAndBAndCarryIsTrue_SumIsTrueAndCarryIsTrue()
         {
             // Arrange
             FullAdder fullAdder = new FullAdder();
 
             // Act
-            fullAdder.Input1.Value = true;
-            fullAdder.Input2.Value = true;
-            fullAdder.CarryInput.Value = true;
+            fullAdder.InputA.Value = true;
+            fullAdder.InputB.Value = true;
+            fullAdder.InputCarry.Value = true;
 
             // Assert
-            Assert.IsTrue(fullAdder.SumOutput.Value);
-            Assert.IsTrue(fullAdder.CarryOutput.Value);
+            Assert.IsTrue(fullAdder.OutputSum.Value);
+            Assert.IsTrue(fullAdder.OutputCarry.Value);
         }
 
         [TestMethod]
-        public void FullAdder_Input1And2AndCarryIsFalse_SumAndCarryIsFalse()
+        public void FullAdder_InputAAndBAndCarryIsFalse_SumAndCarryIsFalse()
         {
             // Arrange
             FullAdder fullAdder = new FullAdder();
 
             // Act
-            fullAdder.Input1.Value = false;
-            fullAdder.Input2.Value = false;
-            fullAdder.CarryInput.Value = false;
+            fullAdder.InputA.Value = false;
+            fullAdder.InputB.Value = false;
+            fullAdder.InputCarry.Value = false;
 
             // Assert
-            Assert.IsFalse(fullAdder.SumOutput.Value);
-            Assert.IsFalse(fullAdder.CarryOutput.Value);
+            Assert.IsFalse(fullAdder.OutputSum.Value);
+            Assert.IsFalse(fullAdder.OutputCarry.Value);
         }
     }
 }

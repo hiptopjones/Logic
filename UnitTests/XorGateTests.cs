@@ -19,40 +19,40 @@ namespace UnitTests
         }
 
         [TestMethod]
-        public void XorGate_Input1IsTrue_OutputIsTrue()
+        public void XorGate_InputAIsTrue_OutputIsTrue()
         {
             // Arrange
             XorGate xorGate = new XorGate();
 
             // Act
-            xorGate.Input1.Value = true;
+            xorGate.InputA.Value = true;
 
             // Assert
             Assert.IsTrue(xorGate.Output.Value);
         }
 
         [TestMethod]
-        public void XorGate_Input2IsTrue_OutputIsTrue()
+        public void XorGate_InputBIsTrue_OutputIsTrue()
         {
             // Arrange
             XorGate xorGate = new XorGate();
 
             // Act
-            xorGate.Input2.Value = true;
+            xorGate.InputB.Value = true;
 
             // Assert
             Assert.IsTrue(xorGate.Output.Value);
         }
 
         [TestMethod]
-        public void XorGate_Input1And2IsTrue_OutputIsTrue()
+        public void XorGate_InputAAndBIsTrue_OutputIsTrue()
         {
             // Arrange
             XorGate xorGate = new XorGate();
 
             // Act
-            xorGate.Input1.Value = true;
-            xorGate.Input2.Value = true;
+            xorGate.InputA.Value = true;
+            xorGate.InputB.Value = true;
 
             // Assert
             Assert.IsFalse(xorGate.Output.Value);

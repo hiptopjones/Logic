@@ -50,6 +50,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="ByteAdderTests.cs" />
     <Compile Include="FullAdderTest.cs" />
     <Compile Include="NandGateTests.cs" />
     <Compile Include="NorGateTests.cs" />

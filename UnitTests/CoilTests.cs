@@ -9,7 +9,7 @@ namespace UnitTests
     public class CoilTests
     {
         [TestMethod]
-        public void Constructor_Defaults()
+        public void Coil_Constructor_Defaults()
         {
             // Arrange / Act
             Coil coil = new Coil();
@@ -20,7 +20,7 @@ namespace UnitTests
         }
 
         [TestMethod]
-        public void InputTrue_MagnetIsActive()
+        public void Coil_InputTrue_MagnetIsActive()
         {
             // Arrange
             Coil coil = new Coil();
@@ -33,7 +33,7 @@ namespace UnitTests
         }
 
         [TestMethod]
-        public void InputFalse_MagnetNotActive()
+        public void Coil_InputFalse_MagnetNotActive()
         {
             // Arrange
             Coil coil = new Coil();
@@ -46,7 +46,7 @@ namespace UnitTests
         }
 
         [TestMethod]
-        public void InputTrue_OutputIsTrue()
+        public void Coil_InputTrue_OutputIsTrue()
         {
             // Arrange
             Coil coil = new Coil();
@@ -59,7 +59,7 @@ namespace UnitTests
         }
 
         [TestMethod]
-        public void InputFalse_OutputIsFalse()
+        public void Coil_InputFalse_OutputIsFalse()
         {
             // Arrange
             Coil coil = new Coil();
@@ -72,7 +72,7 @@ namespace UnitTests
         }
 
         [TestMethod]
-        public void ToggleInput_MagnetActivationCorrect()
+        public void Coil_ToggleInput_MagnetActivationCorrect()
         {
             // Arrange
             Coil coil = new Coil();

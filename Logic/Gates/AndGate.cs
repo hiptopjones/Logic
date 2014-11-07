@@ -12,7 +12,7 @@ namespace Logic.Gates
         private Relay Relay1 { get; set; }
         private Relay Relay2 { get; set; }
 
-        public Node Input1
+        public Node InputA
         {
             get
             {
@@ -20,7 +20,7 @@ namespace Logic.Gates
             }
         }
 
-        public Node Input2
+        public Node InputB
         {
             get
             {
@@ -48,7 +48,7 @@ namespace Logic.Gates
 
         public override string ToString()
         {
-            return string.Format("Input1: {0} Input2: {1} Output: {2}", Input1, Input2, Output);
+            return string.Format("InputA: {0} InputB: {1} Output: {2}", InputA, InputB, Output);
         }
     }
 }

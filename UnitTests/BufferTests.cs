@@ -8,7 +8,7 @@ namespace UnitTests
     public class BufferTests
     {
         [TestMethod]
-        public void Constructor_Defaults()
+        public void Buffer_Constructor_Defaults()
         {
             // Arrange / Act
             Logic.Gates.Buffer buffer = new Logic.Gates.Buffer();
@@ -18,7 +18,7 @@ namespace UnitTests
         }
 
         [TestMethod]
-        public void InputTrue_OutputTrue()
+        public void Buffer_InputTrue_OutputTrue()
         {
             // Arrange
             Logic.Gates.Buffer buffer = new Logic.Gates.Buffer();
@@ -31,7 +31,7 @@ namespace UnitTests
         }
 
         [TestMethod]
-        public void ToggleInput_OutputFalse()
+        public void Buffer_ToggleInput_OutputFalse()
         {
             // Arrange
             Logic.Gates.Buffer buffer = new Logic.Gates.Buffer();

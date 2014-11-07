@@ -15,66 +15,66 @@ namespace UnitTests
             HalfAdder halfAdder = new HalfAdder();
 
             // Assert
-            Assert.IsFalse(halfAdder.SumOutput.Value);
-            Assert.IsFalse(halfAdder.CarryOutput.Value);
+            Assert.IsFalse(halfAdder.OutputSum.Value);
+            Assert.IsFalse(halfAdder.OutputCarry.Value);
         }
 
         [TestMethod]
-        public void HalfAdder_Input1IsTrue_SumIsTrue()
+        public void HalfAdder_InputAIsTrue_SumIsTrue()
         {
             // Arrange
             HalfAdder halfAdder = new HalfAdder();
 
             // Act
-            halfAdder.Input1.Value = true;
+            halfAdder.InputA.Value = true;
 
             // Assert
-            Assert.IsTrue(halfAdder.SumOutput.Value);
-            Assert.IsFalse(halfAdder.CarryOutput.Value);
+            Assert.IsTrue(halfAdder.OutputSum.Value);
+            Assert.IsFalse(halfAdder.OutputCarry.Value);
         }
 
         [TestMethod]
-        public void HalfAdder_Input2IsTrue_SumIsTrue()
+        public void HalfAdder_InputBIsTrue_SumIsTrue()
         {
             // Arrange
             HalfAdder halfAdder = new HalfAdder();
 
             // Act
-            halfAdder.Input2.Value = true;
+            halfAdder.InputB.Value = true;
 
             // Assert
-            Assert.IsTrue(halfAdder.SumOutput.Value);
-            Assert.IsFalse(halfAdder.CarryOutput.Value);
+            Assert.IsTrue(halfAdder.OutputSum.Value);
+            Assert.IsFalse(halfAdder.OutputCarry.Value);
         }
 
         [TestMethod]
-        public void HalfAdder_Input1And2IsTrue_SumIsFalseAndCarryIsTrue()
+        public void HalfAdder_InputAAndBIsTrue_SumIsFalseAndCarryIsTrue()
         {
             // Arrange
             HalfAdder halfAdder = new HalfAdder();
 
             // Act
-            halfAdder.Input1.Value = true;
-            halfAdder.Input2.Value = true;
+            halfAdder.InputA.Value = true;
+            halfAdder.InputB.Value = true;
 
             // Assert
-            Assert.IsFalse(halfAdder.SumOutput.Value);
-            Assert.IsTrue(halfAdder.CarryOutput.Value);
+            Assert.IsFalse(halfAdder.OutputSum.Value);
+            Assert.IsTrue(halfAdder.OutputCarry.Value);
         }
 
         [TestMethod]
-        public void HalfAdder_Input1And2IsFalse_SumAndCarryIsFalse()
+        public void HalfAdder_InputAAndBIsFalse_SumAndCarryIsFalse()
         {
             // Arrange
             HalfAdder halfAdder = new HalfAdder();
 
             // Act
-            halfAdder.Input1.Value = false;
-            halfAdder.Input2.Value = false;
+            halfAdder.InputA.Value = false;
+            halfAdder.InputB.Value = false;
 
             // Assert
-            Assert.IsFalse(halfAdder.SumOutput.Value);
-            Assert.IsFalse(halfAdder.CarryOutput.Value);
+            Assert.IsFalse(halfAdder.OutputSum.Value);
+            Assert.IsFalse(halfAdder.OutputCarry.Value);
         }
     }
 }

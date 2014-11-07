@@ -15,39 +15,39 @@ namespace Logic.Adders
         private HalfAdder CarryHalfAdder { get; set; }
         private OrGate CarryOrGate { get; set; }
 
-        public Node Input1
+        public Node InputA
         {
             get
             {
-                return SumHalfAdder.Input1;
+                return SumHalfAdder.InputA;
             }
         }
         
-        public Node Input2
+        public Node InputB
         {
             get
             {
-                return SumHalfAdder.Input2;
+                return SumHalfAdder.InputB;
             }
         }
 
-        public Node CarryInput
+        public Node InputCarry
         {
             get
             {
-                return CarryHalfAdder.Input1;
+                return CarryHalfAdder.InputA;
             }
         }
 
-        public Node SumOutput
+        public Node OutputSum
         {
             get
             {
-                return CarryHalfAdder.SumOutput;
+                return CarryHalfAdder.OutputSum;
             }
         }
 
-        public Node CarryOutput
+        public Node OutputCarry
         {
             get
             {
@@ -61,9 +61,9 @@ namespace Logic.Adders
             CarryHalfAdder = new HalfAdder();
             CarryOrGate = new OrGate();
 
-            SumHalfAdder.SumOutput.AttachSink(CarryHalfAdder.Input2);
-            CarryHalfAdder.CarryOutput.AttachSink(CarryOrGate.Input1);
-            SumHalfAdder.CarryOutput.AttachSink(CarryOrGate.Input2);
+            SumHalfAdder.OutputSum.AttachSink(CarryHalfAdder.InputB);
+            CarryHalfAdder.OutputCarry.AttachSink(CarryOrGate.InputA);
+            SumHalfAdder.OutputCarry.AttachSink(CarryOrGate.InputB);
 
             InstanceCounter.Add(GetType());
         }

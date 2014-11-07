@@ -20,7 +20,7 @@ namespace UnitTests
         {
             set 
             {
-                _andGate3.Input1.Value = value;
+                _andGate3.InputA.Value = value;
             }
         }
 
@@ -28,7 +28,7 @@ namespace UnitTests
         {
             set
             {
-                _andGate1.Input1.Value = value;
+                _andGate1.InputA.Value = value;
             }
         }
 
@@ -36,7 +36,7 @@ namespace UnitTests
         {
             set
             {
-                _andGate2.Input1.Value = value;
+                _andGate2.InputA.Value = value;
             }
         }
 
@@ -44,7 +44,7 @@ namespace UnitTests
         {
             set
             {
-                _orGate1.Input1.Value = value;
+                _orGate1.InputA.Value = value;
                 _inverter.Input.Value = value;
             }
         }
@@ -53,7 +53,7 @@ namespace UnitTests
         {
             set
             {
-                _orGate1.Input2.Value = value;
+                _orGate1.InputB.Value = value;
             }
         }
 
@@ -61,7 +61,7 @@ namespace UnitTests
         {
             set
             {
-                _orGate3.Input2.Value = value;
+                _orGate3.InputB.Value = value;
             }
         }
 
@@ -77,12 +77,12 @@ namespace UnitTests
         // (N x ((M x (W + T)) + (F x (1 - W)))) + B
         public PetzoldsCatTests()
         {
-            _orGate1.Output.AttachSink(_andGate1.Input2);
-            _inverter.Output.AttachSink(_andGate2.Input2);
-            _andGate1.Output.AttachSink(_orGate2.Input1);
-            _andGate2.Output.AttachSink(_orGate2.Input2);
-            _orGate2.Output.AttachSink(_andGate3.Input2);
-            _andGate3.Output.AttachSink(_orGate3.Input1);
+            _orGate1.Output.AttachSink(_andGate1.InputB);
+            _inverter.Output.AttachSink(_andGate2.InputB);
+            _andGate1.Output.AttachSink(_orGate2.InputA);
+            _andGate2.Output.AttachSink(_orGate2.InputB);
+            _orGate2.Output.AttachSink(_andGate3.InputB);
+            _andGate3.Output.AttachSink(_orGate3.InputA);
         }
 
         public void Clear()
@@ -96,7 +96,7 @@ namespace UnitTests
         }
 
         [TestMethod]
-        public void BlackCat_IsAcceptable()
+        public void PetzoldsCat_BlackCat_IsAcceptable()
         {
             Clear();
 
@@ -106,7 +106,7 @@ namespace UnitTests
         }
 
         [TestMethod]
-        public void NeuteredFemaleNonWhiteCat_IsAcceptable()
+        public void PetzoldsCat_NeuteredFemaleNonWhiteCat_IsAcceptable()
         {
             Clear();
 

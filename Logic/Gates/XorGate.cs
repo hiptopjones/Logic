@@ -14,8 +14,8 @@ namespace Logic.Gates
         private NandGate InputNandGate { get; set; }
         private AndGate OutputAndGate { get; set; }
 
-        public Node Input1 { get; private set; }
-        public Node Input2 { get; private set; }
+        public Node InputA { get; private set; }
+        public Node InputB { get; private set; }
 
         public Node Output
         {
@@ -31,17 +31,17 @@ namespace Logic.Gates
             InputNandGate = new NandGate();
             OutputAndGate = new AndGate();
 
-            Input1 = new Node();
-            Input2 = new Node();
+            InputA = new Node();
+            InputB = new Node();
 
-            Input1.AttachSink(InputOrGate.Input1);
-            Input1.AttachSink(InputNandGate.Input1);
+            InputA.AttachSink(InputOrGate.InputA);
+            InputA.AttachSink(InputNandGate.InputA);
 
-            Input2.AttachSink(InputOrGate.Input2);
-            Input2.AttachSink(InputNandGate.Input2);
+            InputB.AttachSink(InputOrGate.InputB);
+            InputB.AttachSink(InputNandGate.InputB);
 
-            InputOrGate.Output.AttachSink(OutputAndGate.Input1);
-            InputNandGate.Output.AttachSink(OutputAndGate.Input2);
+            InputOrGate.Output.AttachSink(OutputAndGate.InputA);
+            InputNandGate.Output.AttachSink(OutputAndGate.InputB);
 
             InstanceCounter.Add(GetType());
         }

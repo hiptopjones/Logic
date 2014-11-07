@@ -19,54 +19,54 @@ namespace UnitTests
         }
 
         [TestMethod]
-        public void NorGate_Input1IsTrue_OutputIsFalse()
+        public void NorGate_InputAIsTrue_OutputIsFalse()
         {
             // Arrange
             NorGate norGate = new NorGate();
 
             // Act
-            norGate.Input1.Value = true;
+            norGate.InputA.Value = true;
 
             // Assert
             Assert.IsFalse(norGate.Output.Value);
         }
 
         [TestMethod]
-        public void NorGate_Input2IsTrue_OutputIsFalse()
+        public void NorGate_InputBIsTrue_OutputIsFalse()
         {
             // Arrange
             NorGate norGate = new NorGate();
 
             // Act
-            norGate.Input2.Value = true;
+            norGate.InputB.Value = true;
 
             // Assert
             Assert.IsFalse(norGate.Output.Value);
         }
 
         [TestMethod]
-        public void NorGate_Input1And2IsTrue_OutputIsFalse()
+        public void NorGate_InputAAndBIsTrue_OutputIsFalse()
         {
             // Arrange
             NorGate norGate = new NorGate();
 
             // Act
-            norGate.Input1.Value = true;
-            norGate.Input2.Value = true;
+            norGate.InputA.Value = true;
+            norGate.InputB.Value = true;
 
             // Assert
             Assert.IsFalse(norGate.Output.Value);
         }
 
         [TestMethod]
-        public void NorGate_Input1And2IsFalse_OutputIsTrue()
+        public void NorGate_InputAAndBIsFalse_OutputIsTrue()
         {
             // Arrange
             NorGate norGate = new NorGate();
 
             // Act
-            norGate.Input1.Value = false;
-            norGate.Input2.Value = false;
+            norGate.InputA.Value = false;
+            norGate.InputB.Value = false;
 
             // Assert
             Assert.IsTrue(norGate.Output.Value);
@@ -77,10 +77,10 @@ namespace UnitTests
         {
             // Arrange
             NorGate norGate = new NorGate();
-            norGate.Input1.Value = true;
+            norGate.InputA.Value = true;
 
             // Act
-            norGate.Input1.Value = false;
+            norGate.InputA.Value = false;
 
             // Assert
             Assert.IsTrue(norGate.Output.Value);

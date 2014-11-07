@@ -19,40 +19,40 @@ namespace UnitTests
         }
 
         [TestMethod]
-        public void OrGate_Input1IsTrue_OutputIsTrue()
+        public void OrGate_InputAIsTrue_OutputIsTrue()
         {
             // Arrange
             OrGate orGate = new OrGate();
 
             // Act
-            orGate.Input1.Value = true;
+            orGate.InputA.Value = true;
 
             // Assert
             Assert.IsTrue(orGate.Output.Value);
         }
 
         [TestMethod]
-        public void OrGate_Input2IsTrue_OutputIsTrue()
+        public void OrGate_InputBIsTrue_OutputIsTrue()
         {
             // Arrange
             OrGate orGate = new OrGate();
 
             // Act
-            orGate.Input2.Value = true;
+            orGate.InputB.Value = true;
 
             // Assert
             Assert.IsTrue(orGate.Output.Value);
         }
 
         [TestMethod]
-        public void OrGate_Input1And2IsTrue_OutputIsTrue()
+        public void OrGate_InputAAndBIsTrue_OutputIsTrue()
         {
             // Arrange
             OrGate orGate = new OrGate();
 
             // Act
-            orGate.Input1.Value = true;
-            orGate.Input2.Value = true;
+            orGate.InputA.Value = true;
+            orGate.InputB.Value = true;
 
             // Assert
             Assert.IsTrue(orGate.Output.Value);

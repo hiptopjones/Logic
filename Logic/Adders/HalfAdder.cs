@@ -15,10 +15,10 @@ namespace Logic.Adders
         private XorGate SumXorGate { get; set; }
         private AndGate CarryAndGate { get; set; }
 
-        public Node Input1 { get; private set; }
-        public Node Input2 { get; private set; }
+        public Node InputA { get; private set; }
+        public Node InputB { get; private set; }
         
-        public Node SumOutput
+        public Node OutputSum
         {
             get
             {
@@ -26,7 +26,7 @@ namespace Logic.Adders
             }
         }
 
-        public Node CarryOutput
+        public Node OutputCarry
         {
             get
             {
@@ -39,14 +39,14 @@ namespace Logic.Adders
             SumXorGate = new XorGate();
             CarryAndGate = new AndGate();
 
-            Input1 = new Node();
-            Input2 = new Node();
+            InputA = new Node();
+            InputB = new Node();
 
-            Input1.AttachSink(SumXorGate.Input1);
-            Input1.AttachSink(CarryAndGate.Input1);
+            InputA.AttachSink(SumXorGate.InputA);
+            InputA.AttachSink(CarryAndGate.InputA);
 
-            Input2.AttachSink(SumXorGate.Input2);
-            Input2.AttachSink(CarryAndGate.Input2);
+            InputB.AttachSink(SumXorGate.InputB);
+            InputB.AttachSink(CarryAndGate.InputB);
 
             InstanceCounter.Add(GetType());
         }

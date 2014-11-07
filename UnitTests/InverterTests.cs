@@ -9,7 +9,7 @@ namespace UnitTests
     public class InverterTests
     {
         [TestMethod]
-        public void Constructor_Defaults()
+        public void Inverter_Constructor_Defaults()
         {
             // Arrange / Act
             Inverter inverter = new Inverter();
@@ -19,7 +19,7 @@ namespace UnitTests
         }
 
         [TestMethod]
-        public void InputIsTrue_OutputIsFalse()
+        public void Inverter_InputIsTrue_OutputIsFalse()
         {
             // Arrange
             Inverter inverter = new Inverter();
@@ -32,7 +32,7 @@ namespace UnitTests
         }
 
         [TestMethod]
-        public void InputIsFalse_OutputIsTrue()
+        public void Inverter_InputIsFalse_OutputIsTrue()
         {
             // Arrange
             Inverter inverter = new Inverter();

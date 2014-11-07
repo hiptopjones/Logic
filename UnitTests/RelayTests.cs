@@ -9,7 +9,7 @@ namespace UnitTests
     public class RelayTests
     {
         [TestMethod]
-        public void Constructor_Defaults()
+        public void Relay_Constructor_Defaults()
         {
             // Arrange / Act
             Relay relay = new Relay();
@@ -22,7 +22,7 @@ namespace UnitTests
         }
 
         [TestMethod]
-        public void CoilInput_True_SwitchIsActivated()
+        public void Relay_CoilInputIsTrue_SwitchIsActivated()
         {
             // Arrange
             Relay relay = new Relay();
