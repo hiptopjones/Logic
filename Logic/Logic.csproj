@@ -53,6 +53,7 @@
     <Compile Include="Buffer.cs" />
     <Compile Include="Relay.cs" />
     <Compile Include="Switch.cs" />
+    <Compile Include="XorGate.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

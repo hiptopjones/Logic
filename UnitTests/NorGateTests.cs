@@ -8,7 +8,7 @@ namespace UnitTests
     public class NorGateTests
     {
         [TestMethod]
-        public void Constructor_Defaults()
+        public void NorGate_Constructor_Defaults()
         {
             // Arrange / Act
             NorGate norGate = new NorGate();
@@ -18,7 +18,7 @@ namespace UnitTests
         }
 
         [TestMethod]
-        public void Input1IsTrue_OutputIsFalse()
+        public void NorGate_Input1IsTrue_OutputIsFalse()
         {
             // Arrange
             NorGate norGate = new NorGate();
@@ -31,7 +31,7 @@ namespace UnitTests
         }
 
         [TestMethod]
-        public void Input2IsTrue_OutputIsFalse()
+        public void NorGate_Input2IsTrue_OutputIsFalse()
         {
             // Arrange
             NorGate norGate = new NorGate();
@@ -44,7 +44,7 @@ namespace UnitTests
         }
 
         [TestMethod]
-        public void Input1And2IsTrue_OutputIsFalse()
+        public void NorGate_Input1And2IsTrue_OutputIsFalse()
         {
             // Arrange
             NorGate norGate = new NorGate();
@@ -58,7 +58,7 @@ namespace UnitTests
         }
 
         [TestMethod]
-        public void Input1And2IsFalse_OutputIsTrue()
+        public void NorGate_Input1And2IsFalse_OutputIsTrue()
         {
             // Arrange
             NorGate norGate = new NorGate();
@@ -72,7 +72,7 @@ namespace UnitTests
         }
 
         [TestMethod]
-        public void ToggleInput_OutputIsTrue()
+        public void NorGate_ToggleInput_OutputIsTrue()
         {
             // Arrange
             NorGate norGate = new NorGate();

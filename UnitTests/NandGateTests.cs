@@ -8,7 +8,7 @@ namespace UnitTests
     public class NandGateTests
     {
         [TestMethod]
-        public void Constructor_Defaults()
+        public void NandGate_Constructor_Defaults()
         {
             // Arrange / Act
             NandGate nandGate = new NandGate();
@@ -18,7 +18,7 @@ namespace UnitTests
         }
 
         [TestMethod]
-        public void Input1IsTrue_OutputIsTrue()
+        public void NandGate_Input1IsTrue_OutputIsTrue()
         {
             // Arrange
             NandGate nandGate = new NandGate();
@@ -31,7 +31,7 @@ namespace UnitTests
         }
 
         [TestMethod]
-        public void Input2IsTrue_OutputIsTrue()
+        public void NandGate_Input2IsTrue_OutputIsTrue()
         {
             // Arrange
             NandGate nandGate = new NandGate();
@@ -44,7 +44,7 @@ namespace UnitTests
         }
 
         [TestMethod]
-        public void Input1And2IsTrue_OutputIsFalse()
+        public void NandGate_Input1And2IsTrue_OutputIsFalse()
         {
             // Arrange
             NandGate nandGate = new NandGate();
@@ -58,7 +58,7 @@ namespace UnitTests
         }
 
         [TestMethod]
-        public void Input1And2IsFalse_OutputIsTrue()
+        public void NandGate_Input1And2IsFalse_OutputIsTrue()
         {
             // Arrange
             NandGate nandGate = new NandGate();
@@ -72,7 +72,7 @@ namespace UnitTests
         }
 
         [TestMethod]
-        public void ToggleInput_OutputIsTrue()
+        public void NandGate_ToggleInput_OutputIsTrue()
         {
             // Arrange
             NandGate nandGate = new NandGate();

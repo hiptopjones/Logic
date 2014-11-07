@@ -8,7 +8,7 @@ namespace UnitTests
     public class OrGateTests
     {
         [TestMethod]
-        public void Constructor_Defaults()
+        public void OrGate_Constructor_Defaults()
         {
             // Arrange / Act
             OrGate orGate = new OrGate();
@@ -18,7 +18,7 @@ namespace UnitTests
         }
 
         [TestMethod]
-        public void Input1IsTrue_OutputIsTrue()
+        public void OrGate_Input1IsTrue_OutputIsTrue()
         {
             // Arrange
             OrGate orGate = new OrGate();
@@ -31,7 +31,7 @@ namespace UnitTests
         }
 
         [TestMethod]
-        public void Input2IsTrue_OutputIsTrue()
+        public void OrGate_Input2IsTrue_OutputIsTrue()
         {
             // Arrange
             OrGate orGate = new OrGate();
@@ -44,7 +44,7 @@ namespace UnitTests
         }
 
         [TestMethod]
-        public void Input1And2IsTrue_OutputIsTrue()
+        public void OrGate_Input1And2IsTrue_OutputIsTrue()
         {
             // Arrange
             OrGate orGate = new OrGate();
