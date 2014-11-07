@@ -34,22 +34,17 @@ namespace Logic
             Output = new Node();
 
             Relay1 = new Relay();
-            Relay1.Switch.Output.ValueChanged += OnSwitchOutputValueChanged;
-            Relay1.Switch.Input.Value = true;
-            
             Relay2 = new Relay();
+
+            Relay1.Switch.Output.ValueChanged += OnSwitchOutputValueChanged;
             Relay2.Switch.Output.ValueChanged += OnSwitchOutputValueChanged;
+
+            Relay1.Switch.Input.Value = true;
             Relay2.Switch.Input.Value = true;
         }
 
         private void OnSwitchOutputValueChanged(object sender, EventArgs e)
         {
-            if (Relay1 == null || Relay2 == null)
-            {
-                // This can get called during construction when things are still being setup.
-                return;
-            }
-
             Output.Value = (Relay1.Switch.Output.Value || Relay2.Switch.Output.Value);
         }
 
