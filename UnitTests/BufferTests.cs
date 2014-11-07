@@ -1,6 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Logic;
+using Logic.Gates;
 
 namespace UnitTests
 {
@@ -11,7 +11,7 @@ namespace UnitTests
         public void Constructor_Defaults()
         {
             // Arrange / Act
-            Logic.Buffer buffer = new Logic.Buffer();
+            Logic.Gates.Buffer buffer = new Logic.Gates.Buffer();
 
             // Assert
             Assert.IsFalse(buffer.Output.Value);
@@ -21,7 +21,7 @@ namespace UnitTests
         public void InputTrue_OutputTrue()
         {
             // Arrange
-            Logic.Buffer buffer = new Logic.Buffer();
+            Logic.Gates.Buffer buffer = new Logic.Gates.Buffer();
 
             // Act
             buffer.Input.Value = true;
@@ -34,7 +34,7 @@ namespace UnitTests
         public void ToggleInput_OutputFalse()
         {
             // Arrange
-            Logic.Buffer buffer = new Logic.Buffer();
+            Logic.Gates.Buffer buffer = new Logic.Gates.Buffer();
             buffer.Input.Value = true;
 
             // Act

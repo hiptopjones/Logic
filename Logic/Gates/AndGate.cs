@@ -1,12 +1,13 @@
-﻿using System;
+﻿using Logic.Components;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Logic
+namespace Logic.Gates
 {
-    public class NorGate
+    public class AndGate
     {
         private Relay Relay1 { get; set; }
         private Relay Relay2 { get; set; }
@@ -35,15 +36,14 @@ namespace Logic
             }
         }
 
-        public NorGate()
+        public AndGate()
         {
-            Relay1 = new Relay(SwitchType.NormallyClosed);
-            Relay2 = new Relay(SwitchType.NormallyClosed);
-
+            Relay1 = new Relay();
+            Relay2 = new Relay();
+            
             Relay1.Switch.Output.AttachSink(Relay2.Switch.Input);
-            Relay1.Switch.Input.Value = true;
 
-            InstanceCounter.Add(GetType());
+            Relay1.Switch.Input.Value = true;
         }
 
         public override string ToString()

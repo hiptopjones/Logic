@@ -1,12 +1,14 @@
-﻿using System;
+﻿using Logic.Components;
+using Logic.Helpers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Logic
+namespace Logic.Gates
 {
-    public class AndGate
+    public class OrGate
     {
         private Relay Relay1 { get; set; }
         private Relay Relay2 { get; set; }
@@ -27,22 +29,27 @@ namespace Logic
             }
         }
 
-        public Node Output
-        {
-            get
-            {
-                return Relay2.Switch.Output;
-            }
-        }
+        public Node Output { get; private set; }
 
-        public AndGate()
+        public OrGate()
         {
+            Output = new Node();
+
             Relay1 = new Relay();
             Relay2 = new Relay();
-            
-            Relay1.Switch.Output.AttachSink(Relay2.Switch.Input);
+
+            Relay1.Switch.Output.ValueChanged += OnSwitchOutputValueChanged;
+            Relay2.Switch.Output.ValueChanged += OnSwitchOutputValueChanged;
 
             Relay1.Switch.Input.Value = true;
+            Relay2.Switch.Input.Value = true;
+
+            InstanceCounter.Add(GetType());
+        }
+
+        private void OnSwitchOutputValueChanged(object sender, EventArgs e)
+        {
+            Output.Value = (Relay1.Switch.Output.Value || Relay2.Switch.Output.Value);
         }
 
         public override string ToString()

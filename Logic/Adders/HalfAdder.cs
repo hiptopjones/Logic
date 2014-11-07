@@ -1,10 +1,13 @@
-﻿using System;
+﻿using Logic.Components;
+using Logic.Gates;
+using Logic.Helpers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Logic
+namespace Logic.Adders
 {
     // Called "half" because it doesn't accept the input of carry
     public class HalfAdder
