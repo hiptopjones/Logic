@@ -40,6 +40,8 @@ namespace Logic
 
             InputOrGate.Output.AttachSink(OutputAndGate.Input1);
             InputNandGate.Output.AttachSink(OutputAndGate.Input2);
+
+            InstanceCounter.Add(GetType());
         }
     }
 }

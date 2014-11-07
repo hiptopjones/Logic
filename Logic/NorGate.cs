@@ -42,6 +42,8 @@ namespace Logic
 
             Relay1.Switch.Output.AttachSink(Relay2.Switch.Input);
             Relay1.Switch.Input.Value = true;
+
+            InstanceCounter.Add(GetType());
         }
 
         public override string ToString()

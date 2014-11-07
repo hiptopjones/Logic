@@ -25,6 +25,11 @@ namespace Logic
             }
         }
 
+        public Node()
+        {
+            InstanceCounter.Add(GetType());
+        }
+
         public void AttachSink(Node sink)
         {
             ValueChanged += (s, e) =>

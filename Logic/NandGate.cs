@@ -41,6 +41,8 @@ namespace Logic
 
             Relay1.Switch.Input.Value = true;
             Relay2.Switch.Input.Value = true;
+
+            InstanceCounter.Add(GetType());
         }
 
         private void OnSwitchOutputValueChanged(object sender, EventArgs e)

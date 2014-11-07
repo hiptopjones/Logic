@@ -30,6 +30,8 @@ namespace Logic
         {
             Relay = new Relay();
             Relay.Switch.Input.Value = true;
+
+            InstanceCounter.Add(GetType());
         }
 
         public override string ToString()

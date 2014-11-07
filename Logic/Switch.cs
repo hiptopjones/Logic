@@ -66,6 +66,8 @@ namespace Logic
             Output = new Node();
 
             Input.ValueChanged += OnInputValueChanged;
+
+            InstanceCounter.Add(GetType());
         }
 
         private void OnInputValueChanged(object sender, EventArgs e)

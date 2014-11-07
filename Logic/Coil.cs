@@ -19,15 +19,19 @@ namespace Logic
             Input = new Node();
             Output = new Node();
 
-            Input.ValueChanged += (s, e) =>
-            {
-                bool value = Input.Value;
+            Input.ValueChanged += OnInputValueChanged;
 
-                IsMagnetActivated = value;
-                NotifyMagnetChanged();
- 
-                Output.Value = value;
-            };
+            InstanceCounter.Add(GetType());
+        }
+
+        void OnInputValueChanged(object sender, EventArgs e)
+        {
+            bool value = Input.Value;
+
+            IsMagnetActivated = value;
+            NotifyMagnetChanged();
+
+            Output.Value = value;
         }
 
         private void NotifyMagnetChanged()

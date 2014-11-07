@@ -17,6 +17,8 @@ namespace Logic
             Switch = new Switch(switchType);
 
             Coil.MagnetChanged += OnCoilMagnetChanged;
+
+            InstanceCounter.Add(GetType());
         }
 
         private void OnCoilMagnetChanged(object sender, EventArgs e)

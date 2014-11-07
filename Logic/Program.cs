@@ -10,8 +10,16 @@ namespace Logic
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Starting logic test...");
+            FullAdder adder = new FullAdder();
+            InstanceCounter.DumpCounts();
 
+            WaitForKey();
+        }
+
+        static void WaitForKey()
+        {
+            Console.WriteLine("Hit a key to continue...");
+            Console.ReadKey();
         }
     }
 }

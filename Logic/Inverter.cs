@@ -28,6 +28,8 @@ namespace Logic
             Relay.Switch.Output.ValueChanged += OnSwitchOutputValueChanged;
 
             Relay.Switch.Input.Value = true;
+
+            InstanceCounter.Add(GetType());
         }
 
         private void OnSwitchOutputValueChanged(object sender, EventArgs e)
