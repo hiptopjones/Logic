@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Adders\WordAdder.cs" />
     <Compile Include="Adders\ByteAdder.cs" />
     <Compile Include="Gates\AndGate.cs" />
     <Compile Include="Components\Coil.cs" />
