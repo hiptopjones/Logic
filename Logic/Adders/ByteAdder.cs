@@ -52,7 +52,7 @@ namespace Logic.Adders
                 if (i > 0)
                 {
                     FullAdder previousAdder = adders[i - 1];
-                    previousAdder.OutputCarry.AttachSink(currentAdder.InputCarry);
+                    previousAdder.OutputCarry.ConnectTo(currentAdder.InputCarry);
                 }
             }
 

@@ -42,11 +42,11 @@ namespace Logic.Adders
             InputA = new Node();
             InputB = new Node();
 
-            InputA.AttachSink(SumXorGate.InputA);
-            InputA.AttachSink(CarryAndGate.InputA);
+            InputA.ConnectTo(SumXorGate.InputA);
+            InputA.ConnectTo(CarryAndGate.InputA);
 
-            InputB.AttachSink(SumXorGate.InputB);
-            InputB.AttachSink(CarryAndGate.InputB);
+            InputB.ConnectTo(SumXorGate.InputB);
+            InputB.ConnectTo(CarryAndGate.InputB);
 
             InstanceCounter.Add(GetType());
         }

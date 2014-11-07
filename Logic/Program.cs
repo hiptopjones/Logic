@@ -12,7 +12,7 @@ namespace Logic
     {
         static void Main(string[] args)
         {
-            FullAdder adder = new FullAdder();
+            WordAdder adder = new WordAdder();
             InstanceCounter.DumpCounts();
 
             WaitForKey();

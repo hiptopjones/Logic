@@ -61,9 +61,9 @@ namespace Logic.Adders
             CarryHalfAdder = new HalfAdder();
             CarryOrGate = new OrGate();
 
-            SumHalfAdder.OutputSum.AttachSink(CarryHalfAdder.InputB);
-            CarryHalfAdder.OutputCarry.AttachSink(CarryOrGate.InputA);
-            SumHalfAdder.OutputCarry.AttachSink(CarryOrGate.InputB);
+            SumHalfAdder.OutputSum.ConnectTo(CarryHalfAdder.InputB);
+            CarryHalfAdder.OutputCarry.ConnectTo(CarryOrGate.InputA);
+            SumHalfAdder.OutputCarry.ConnectTo(CarryOrGate.InputB);
 
             InstanceCounter.Add(GetType());
         }

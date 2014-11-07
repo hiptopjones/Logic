@@ -77,12 +77,12 @@ namespace UnitTests
         // (N x ((M x (W + T)) + (F x (1 - W)))) + B
         public PetzoldsCatTests()
         {
-            _orGate1.Output.AttachSink(_andGate1.InputB);
-            _inverter.Output.AttachSink(_andGate2.InputB);
-            _andGate1.Output.AttachSink(_orGate2.InputA);
-            _andGate2.Output.AttachSink(_orGate2.InputB);
-            _orGate2.Output.AttachSink(_andGate3.InputB);
-            _andGate3.Output.AttachSink(_orGate3.InputA);
+            _orGate1.Output.ConnectTo(_andGate1.InputB);
+            _inverter.Output.ConnectTo(_andGate2.InputB);
+            _andGate1.Output.ConnectTo(_orGate2.InputA);
+            _andGate2.Output.ConnectTo(_orGate2.InputB);
+            _orGate2.Output.ConnectTo(_andGate3.InputB);
+            _andGate3.Output.ConnectTo(_orGate3.InputA);
         }
 
         public void Clear()

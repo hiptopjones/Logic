@@ -72,7 +72,7 @@ namespace Logic.Adders
             LowByteAdder = new ByteAdder();
             HighByteAdder = new ByteAdder();
 
-            LowByteAdder.OutputCarry.AttachSink(HighByteAdder.InputCarry);
+            LowByteAdder.OutputCarry.ConnectTo(HighByteAdder.InputCarry);
 
             InstanceCounter.Add(GetType());
         }

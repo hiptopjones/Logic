@@ -34,14 +34,14 @@ namespace Logic.Gates
             InputA = new Node();
             InputB = new Node();
 
-            InputA.AttachSink(InputOrGate.InputA);
-            InputA.AttachSink(InputNandGate.InputA);
+            InputA.ConnectTo(InputOrGate.InputA);
+            InputA.ConnectTo(InputNandGate.InputA);
 
-            InputB.AttachSink(InputOrGate.InputB);
-            InputB.AttachSink(InputNandGate.InputB);
+            InputB.ConnectTo(InputOrGate.InputB);
+            InputB.ConnectTo(InputNandGate.InputB);
 
-            InputOrGate.Output.AttachSink(OutputAndGate.InputA);
-            InputNandGate.Output.AttachSink(OutputAndGate.InputB);
+            InputOrGate.Output.ConnectTo(OutputAndGate.InputA);
+            InputNandGate.Output.ConnectTo(OutputAndGate.InputB);
 
             InstanceCounter.Add(GetType());
         }

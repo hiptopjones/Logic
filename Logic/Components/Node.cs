@@ -31,7 +31,7 @@ namespace Logic.Components
             InstanceCounter.Add(GetType());
         }
 
-        public void AttachSink(Node sink)
+        public void ConnectTo(Node sink)
         {
             ValueChanged += (s, e) =>
             {
