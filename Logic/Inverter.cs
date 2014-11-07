@@ -24,7 +24,7 @@ namespace Logic
         {
             Output = new Node();
 
-            Relay = new Relay(false);
+            Relay = new Relay(SwitchType.NormallyClosed);
             Relay.Switch.Output.ValueChanged += OnSwitchOutputValueChanged;
 
             Relay.Switch.Input.Value = true;

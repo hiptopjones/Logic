@@ -6,6 +6,12 @@ using System.Threading.Tasks;
 
 namespace Logic
 {
+    public enum SwitchType
+    {
+        NormallyOpen,
+        NormallyClosed
+    }
+
     // Single-pole, single throw switch
     public class Switch
     {
@@ -50,11 +56,11 @@ namespace Logic
         }
 
         // Enables changing the switch from normally-open (default) to normally-closed
-        private bool IsNormallyOpen { get; set; }
+        private SwitchType Type { get; set; }
 
-        public Switch(bool isNormallyOpen = true)
+        public Switch(SwitchType type = SwitchType.NormallyOpen)
         {
-            IsNormallyOpen = isNormallyOpen;
+            Type = type;
 
             Input = new Node();
             Output = new Node();
@@ -70,7 +76,7 @@ namespace Logic
         private void UpdateOutputValue(bool value)
         {
             bool isActivated = IsSwitchActivated;
-            if (IsNormallyOpen)
+            if (Type == SwitchType.NormallyOpen)
             {
                 Output.Value = (isActivated ? value : false);
             }
@@ -82,7 +88,7 @@ namespace Logic
 
         public override string ToString()
         {
-            return string.Format("Input: {0} Output: {1} IsNormallyOpen: {2}", Input, Output, IsNormallyOpen);
+            return string.Format("Input: {0} Output: {1} Type: {2}", Input, Output, Type);
         }
     }
 }

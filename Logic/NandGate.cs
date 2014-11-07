@@ -33,11 +33,11 @@ namespace Logic
         {
             Output = new Node();
 
-            Relay1 = new Relay(false);
+            Relay1 = new Relay(SwitchType.NormallyClosed);
             Relay1.Switch.Output.ValueChanged += OnSwitchOutputValueChanged;
             Relay1.Switch.Input.Value = true;
 
-            Relay2 = new Relay(false);
+            Relay2 = new Relay(SwitchType.NormallyClosed);
             Relay2.Switch.Output.ValueChanged += OnSwitchOutputValueChanged;
             Relay2.Switch.Input.Value = true;
         }

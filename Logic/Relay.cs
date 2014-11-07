@@ -11,10 +11,10 @@ namespace Logic
         public Coil Coil { get; private set; }
         public Switch Switch { get; private set; }
 
-        public Relay(bool isSwitchNormallyOpen = true)
+        public Relay(SwitchType switchType = SwitchType.NormallyOpen)
         {
             Coil = new Coil();
-            Switch = new Switch(isSwitchNormallyOpen);
+            Switch = new Switch(switchType);
 
             Coil.MagnetChanged += OnCoilMagnetChanged;
         }

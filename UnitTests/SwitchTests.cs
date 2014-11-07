@@ -22,7 +22,7 @@ namespace UnitTests
         public void Constructor_IsNormallyClosed_SwitchNotActivatedAndOutputFalse()
         {
             // Arrange / Act
-            Switch sw = new Switch(false);
+            Switch sw = new Switch(SwitchType.NormallyClosed);
 
             // Assert
             Assert.IsFalse(sw.IsSwitchActivated);
@@ -89,7 +89,7 @@ namespace UnitTests
         public void SwitchIsNormallyClosedAndSwitchActivated_InputIsTrue_OutputIsFalse()
         {
             // Arrange
-            Switch sw = new Switch(false);
+            Switch sw = new Switch(SwitchType.NormallyClosed);
             sw.IsSwitchActivated = true;
 
             // Act
@@ -103,7 +103,7 @@ namespace UnitTests
         public void SwitchIsNormallyClosedAndInputIsTrue_SwitchActivated_OutputIsFalse()
         {
             // Arrange
-            Switch sw = new Switch(false);
+            Switch sw = new Switch(SwitchType.NormallyClosed);
             sw.Input.Value = true;
 
             // Act
@@ -132,7 +132,7 @@ namespace UnitTests
         public void SwitchToggleAndIsNormallyClosed_OutputIsTrue()
         {
             // Arrange
-            Switch sw = new Switch(false);
+            Switch sw = new Switch(SwitchType.NormallyClosed);
             sw.Input.Value = true;
             sw.IsSwitchActivated = true;
 

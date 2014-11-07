@@ -37,8 +37,8 @@ namespace Logic
 
         public NorGate()
         {
-            Relay1 = new Relay(false);
-            Relay2 = new Relay(false);
+            Relay1 = new Relay(SwitchType.NormallyClosed);
+            Relay2 = new Relay(SwitchType.NormallyClosed);
 
             Relay1.Switch.Output.AttachSink(Relay2.Switch.Input);
             Relay1.Switch.Input.Value = true;
